@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class CountPrimes {
 
 	public static void main(String[] args) {
-		int n = 10;
+		int n = 5;
 		System.out.println(countPrimes(n));
 	}
 
@@ -21,7 +21,7 @@ public class CountPrimes {
 
 		int cnt = 0;
 		
-		for (int i = 2; i < n; i++) {
+		for (int i = 2; i <= n; i++) {
 			boolean flag = true;
 			for (int j = 2; j <= Math.sqrt(i); j++) {
 				if(i%j ==0) {
