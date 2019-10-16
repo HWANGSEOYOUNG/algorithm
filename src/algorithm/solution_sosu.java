@@ -4,7 +4,7 @@ package algorithm;
 public class solution_sosu {
 
     public static void main(String[] args) {
-        int n = 1500000;
+        int n = 10;
         System.out.println(solution(n));
     }
 
@@ -27,21 +27,34 @@ public class solution_sosu {
 //
 //        return answer;
     	
-    	int answer = 0, num = 2;
+//    	int answer = 0, num = 2;
+//    	
+//    	while(num <= n) {
+//    		for (int i = 2; i <= num; i++) {
+//				if(num%i == 0 && i != num) {
+//					break;
+//				}
+//				if(num%i == 0 && i == num) {
+//					answer++;
+//				}
+//				
+//			}
+//    		num++;
+//    	}
+//    	
+//    	return answer;
     	
-    	while(num <= n) {
-    		for (int i = 2; i <= num; i++) {
-				if(num%i == 0 && i != num) {
-					break;
-				}
-				if(num%i == 0 && i == num) {
-					answer++;
-				}
-				
-			}
-    		num++;
-    	}
-    	
-    	return answer;
+    	//에라토스테네스의 체 
+        int result =0;
+        boolean[] primeCheck = new boolean[n+1];
+        for(int i=2; i<=n; i++) {
+            if(primeCheck[i]==false) {
+                result++;
+                for(int j =2; i*j<=n; j++) {
+                    primeCheck[i*j]=true;
+                }
+            }
+        }
+        return result;
     }
 }
