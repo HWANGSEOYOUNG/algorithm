@@ -20,7 +20,7 @@ package algorithm;
 
 import java.util.HashMap;
 
-public interface FindTheDifference {
+public class FindTheDifference {
 
 	public static void main(String[] args) {
 		String s = "abcd";
